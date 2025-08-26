@@ -2,3 +2,35 @@
 venv/
 venv/**
 **/venv/**
+
+# Exclude Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Exclude build artifacts
+build/
+dist/
+*.egg-info/
+
+# Exclude IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Exclude git files
+.git/
+.gitignore
+
+# Exclude test coverage
+.coverage
+htmlcov/
+.pytest_cache/

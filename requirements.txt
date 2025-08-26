@@ -12,7 +12,7 @@ idna==3.10
     # via requests
 packaging==25.0
     # via snyk-package-manager-cicd-check-and-report (pyproject.toml)
-requests==2.32.4
+requests==2.32.5
     # via snyk-package-manager-cicd-check-and-report (pyproject.toml)
 urllib3==2.5.0
     # via requests
