@@ -1,0 +1,15 @@
+# Ignore IDE and OS-specific files
+.idea/
+.vscode/
+.DS_Store
+
+# Snyk and script-generated files
+snyk-results.json
+snyk_report_violations_*.csv
+
+# Python-specific files
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
+.env
