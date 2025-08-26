@@ -1,4 +1,4 @@
-# Snyk Package Manager CICD Check
+# Snyk Package Manager CICD Check & Reporting
 
 This repository contains two Python scripts designed to automate and enhance Snyk's capabilities for enforcing custom policies and generating reports.
 
@@ -9,7 +9,7 @@ This repository contains two Python scripts designed to automate and enhance Sny
 #### `check_snyk_dependencies.py`
 
   * **Function**: This script acts as a **CI/CD pipeline gate**.
-  * **Purpose**: It parses the JSON output from a `snyk test` command and fails the build if a specific package, configured as `package-xyz`, has a version greater than the allowed threshold (`v0.0.2`). This ensures that no new code is deployed with a forbidden dependency version, making it perfect for your continuous integration workflow.
+  * **Purpose**: It parses the JSON output from a `snyk test` command and fails the build if a specific package, configured as `package-xyz`, has a version greater than the allowed threshold (`v0.0.2`). This ensures that no new code is deployed with a forbidden dependency version.
 
 #### `snyk_reporter.py`
 
@@ -23,16 +23,15 @@ This repository contains two Python scripts designed to automate and enhance Sny
 #### Prerequisites
 
   * Python 3.x
-  * `pip`
   * `snyk-cli`
   * A Snyk API Token
 
 #### Installation
 
-Install the necessary Python packages using the following command:
+Install the necessary Python packages using the provided `requirements.txt` file.
 
 ```bash
-pip install requests packaging
+pip install -r requirements.txt
 ```
 
 #### Configuration
@@ -46,13 +45,15 @@ Open the script and edit the following variables to match your requirements:
 
 **For `snyk_reporter.py`:**
 
-Set your Snyk API token as an environment variable to ensure security. The script will read this value automatically.
+You need to provide your Snyk API token to the script securely.
 
-```bash
-export SNYK_API_TOKEN="your_snyk_api_token"
-```
+  * **Local Development**: Set the token as an environment variable in your terminal.
+      * **macOS/Linux**: `export SNYK_API_TOKEN="your_snyk_api_token"`
+      * **Windows**: `set SNYK_API_TOKEN="your_snyk_api_token"`
+  * **CI/CD Pipelines**: Configure the API token as a **CI/CD variable** or **secret** within your pipeline's settings.
+  * **Cron Jobs**: Ensure the environment variable is explicitly defined in your cron script to make it available to the Python script.
 
-Also, you'll need to update the `SNYK_GROUP_ID` variable within the script with your specific Snyk group ID.
+You'll also need to update the `SNYK_GROUP_ID` variable within the script itself with your specific Snyk group ID.
 
 -----
 
@@ -81,4 +82,4 @@ Run this script as a scheduled job (e.g., using a cron job or a scheduled CI/CD 
 python snyk_reporter.py
 ```
 
-The script will generate a timestamped CSV report named `snyk_report_violations_*.csv` in the same directory, listing all found violations.****
+The script will generate a timestamped CSV report named `snyk_report_violations_*.csv` in the same directory, listing all found violations.
