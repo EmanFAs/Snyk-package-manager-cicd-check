@@ -4,7 +4,7 @@ setup(
     name="snyk-package-manager-cicd-check-and-report",
     version="0.1.0",
     author="Fritz Abélard",
-    author_email="your.email@example.com",
+    author_email="fritz.abelard@snyk.io",
     description="Python scripts for Snyk CI/CD gating and API-driven reporting.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
