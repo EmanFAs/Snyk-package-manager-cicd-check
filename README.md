@@ -4,6 +4,12 @@ This repository contains two Python scripts designed to automate and enhance Sny
 
 -----
 
+### Disclaimer :warning: 
+
+This is not an officially supported Snyk tool and is not directly endorsed by Snyk
+
+-----
+
 ### Scripts Explained 💻
 
 #### `check_snyk_dependencies.py`
