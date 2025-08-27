@@ -1,4 +1,4 @@
-# Snyk Package Manager CICD Check & Reporting
+# Snyk Package Manager CICD Gating & Reporting
 
 This repository contains two Python scripts designed to automate and enhance Snyk's capabilities for enforcing custom policies and generating reports.
 
