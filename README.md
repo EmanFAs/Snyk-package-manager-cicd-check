@@ -1,3 +1,5 @@
+<img width="2517" height="397" alt="image" src="https://github.com/user-attachments/assets/81f3fac1-6cc2-486f-be06-5747ebe16f97" />
+
 # Snyk Package Manager CICD Gating & Reporting
 
 This repository contains two Python scripts designed to automate and enhance Snyk's capabilities for enforcing custom policies and generating reports.
